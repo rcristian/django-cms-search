@@ -83,7 +83,7 @@ def page_index_factory(language_code):
                         text += _strip_tags(instance.render_plugin(context=RequestContext(request))) + u' '
                 text += obj.get_meta_description() or u''
                 text += u' '
-                text += obj.get_meta_keywords() if hasattr(obj, 'get_meta_keywords') else u''
+                text += obj.get_meta_keywords() or u''
                 self.prepared_data['text'] = text
                 self.prepared_data['language'] = self._language
                 return self.prepared_data
